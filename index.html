@@ -15,15 +15,18 @@
     <a-scene embedded arjs='sourceType: webcam;' vr-mode-ui="enabled: false">
 
         <a-marker-camera id="marker" type='pattern' url='./pattern-marker.patt'>
-
-            <a-video id="Ballerin"
-                src="./The Dying Swan â Natalia Osipova (The Royal Ballet).mp4"></a-video>
-
+            <a-plane position="0 1 -4" rotation="-90 0 0" width="3" height="1" color="#fff"></a-plane>
+            <a-video id="ballerina" autoplay loop="true" src="./BallerinaEIA2.mp4" crossorigin="anonymous"></a-video>
+           
+            <!-- <a-entity id="video-entity" geometry="primitive: plane; width: 16; height: 9;" material="src: #ballerina"></a-entity> -->
         </a-marker-camera>
 
 
     </a-scene>
-
+    <script>
+        document.querySelector('#ballerina').play();
+      </script>
 </body>
 
 </html>
+
