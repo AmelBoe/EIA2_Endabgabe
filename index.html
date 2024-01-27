@@ -14,13 +14,44 @@
 <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs='sourceType: webcam;' vr-mode-ui="enabled: false">
 
-        <a-marker-camera id="marker" type='pattern' url='./pattern-marker.patt'>
+        <a-marker-camera id="marker" type='pattern' url='./pattern_ballerina.patt'>
             <a-plane position="0 1 -4" rotation="-90 0 0" width="3" height="1" color="#fff"></a-plane>
             <a-video id="ballerina" autoplay loop="true" src="./BallerinaEIA2.mp4" crossorigin="anonymous"></a-video>
            
             <!-- <a-entity id="video-entity" geometry="primitive: plane; width: 16; height: 9;" material="src: #ballerina"></a-entity> -->
         </a-marker-camera>
 
+
+                <!-- zweiter Marker mit Info Karusell -->
+                <a-marker-camera id="marker02" type='pattern' url='./pattern_info.patt'> 
+                    <a-entity id="infoCarousel" rotation="0 0 0"></a-entity>
+                    
+                      <!-- Seite 1 -->
+                  <a-entity id="page1" visible="false" position="0 0 -3">
+                    <!-- Füge hier deine Inhalte für Seite 1 hinzu -->
+                    <a-box color="red" width="2" height="2" depth="0.1"></a-box>
+                  </a-entity>
+        
+                  <!-- Seite 2 -->
+                  <a-entity id="page2" visible="false" position="0 0 -3">
+                    <!-- Füge hier deine Inhalte für Seite 2 hinzu -->
+                    <a-box color="green" width="2" height="2" depth="0.1"></a-box>
+                  </a-entity>
+        
+                  <!-- Seite 3 -->
+                  <a-entity id="page3" visible="false" position="0 0 -3">
+                    <!-- Füge hier deine Inhalte für Seite 3 hinzu -->
+                    <a-box color="blue" width="2" height="2" depth="0.1"></a-box>
+                  </a-entity>
+                </a-entity>
+        
+                <!-- Button zum Wechseln der Seiten im Karusell -->
+                <a-entity id="nextButton" position="0 -1 0" rotation="-90 0 0" scale="0.5 0.5 0.5" 
+                          text="value: Next; align: center; width: 2; color: white;"></a-entity>
+            
+        
+              <!-- Asset-Definitionen (Musterdateien, Modelle, Videos) hier einfügen -->
+                </a-marker-camera> 
 
     </a-scene>
     <script>
