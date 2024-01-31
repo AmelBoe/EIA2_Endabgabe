@@ -18,6 +18,7 @@ function bildwechsel() {
     }
 
 }
+ballerinabild1.setAttribute("scale", "4 4 4"); //Veränderung der Größe der Ballerina
 
 //Intervall der Bilder Ballerina
 intervall = setInterval(() => {
@@ -32,16 +33,30 @@ document.querySelector("#marker").appendChild(ballerinabild1);
 
 
 //Sound wird erst abgespielt, wenn der Marker gescannt wird
-  document.querySelector('#marker').addEventListener('markerFound', function() {
+document.querySelector('#marker').addEventListener('markerFound', function () {
     document.querySelector('#sound').setAttribute('visible', true);
     document.querySelector('#sound').components.sound.playSound();
-  });
+});
 
 
 
 
 //Button zum 360 Gradbild
-  document.querySelector('#button2').addEventListener('click', function() {
+document.querySelector('#button2').addEventListener('click', function () {
     document.querySelector('#operBild').setAttribute('visible', true);
     document.querySelector('#page4').setAttribute('visible', true);
-  });
+});
+
+//Bild von der Website erscheint, wenn man auf den Button "Jetzt Karten bestellen" klickt
+document.getElementById("orderButton").addEventListener("click", function () {
+    console.log("hallo Welt")
+    document.getElementById("fullscreenImage").object3D.visible = true;
+}
+)
+
+//Bild von der Oper erscheint, wenn man auf den Button "Schau in die Oper" klickt (geht leider noch nicht)
+document.getElementById("buttonOper").addEventListener("click", function () {
+    console.log("Oper Bild")
+    document.getElementById("operBild").object3D.visible = true;
+}
+)
