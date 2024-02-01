@@ -19,6 +19,7 @@ function bildwechsel() {
 
 }
 ballerinabild1.setAttribute("scale", "4 4 4"); //Veränderung der Größe der Ballerina
+ballerinabild1.setAttribute("position", "0 0 -5")
 
 //Intervall der Bilder Ballerina
 intervall = setInterval(() => {
@@ -48,7 +49,7 @@ document.querySelector('#button2').addEventListener('click', function () {
 });
 
 //Bild von der Website erscheint, wenn man auf den Button "Jetzt Karten bestellen" klickt
-document.getElementById("orderButton").addEventListener("click", function () {
+document.getElementById("websiteButton").addEventListener("click", function () {
     console.log("hallo Welt")
     document.getElementById("fullscreenImage").object3D.visible = true;
 }

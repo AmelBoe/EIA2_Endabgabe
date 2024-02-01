@@ -7,7 +7,9 @@
     <title>Document</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
+    <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
+
 
 </head>
 
@@ -31,6 +33,7 @@
 
 
 
+
         <a-cursor></a-cursor>
 
 
@@ -38,29 +41,25 @@
 
 
         <!-- zweiter Marker mit Info Karusell -->
-        <a-marker-camera id="marker02" type='pattern' url='./pattern_info.patt'>
+        <a-marker id="marker02" type='pattern' url='./pattern_info.patt'>
             <a-entity id="infoCarousel" rotation="0 0 0"></a-entity>
 
-          
-          
-          
+
+
+
             <!-- Seite 1 -->
             <a-entity id="page1" visible="false" position="0 0 -3">
                 <!-- Füge hier deine Inhalte für Seite 1 hinzu -->
                 <a-box color="red" width="2" height="2" depth="0.1"></a-box>
 
                 <!--Button über den man auf die Website kommt-->
-                <a-entity id="orderButton" geometry="primitive: plane; width: 2; height: 0.5" material="color: #333"
+                <a-entity id="websiteButton" geometry="primitive: plane; width: 2; height: 0.5" material="color: #333"
                     position="0 0 -1" rotation="180 0 0">
                     <a-text value="Jetzt Karten bestellen" text-anchor="center" color="#FFF" font-size="0.2"
                         position="-1 0 0.1"></a-text>
                 </a-entity>
 
-                <!-- Bild, das über den ganzen Bildschirm gelegt wird -->
-                <a-entity id="fullscreenImage" visible="false">
-                    <a-plane color="#FFF" width="10" height="10"></a-plane>
-                    <a-image src="./WebsiteLaptopVersion.jpeg" width="8" height="8" position="0 0 -1"></a-image>
-                </a-entity>
+               
             </a-entity>
 
 
@@ -93,7 +92,7 @@
             <!-- Seite 4 -->
             <a-entity id="page4" visible="false" position="0 0 -3">
 
-                <a-box color="yellow" width="2" height="2" depth="0.1"></a-box>
+                <a-plane color="yellow" width="2" height="2" depth="0.1" rotation="180 0 0"></a-plane>
 
 
                 <a-entity id="buttonOper" geometry="primitive: plane; width: 1; height: 0.5" material="color: #333"
@@ -101,9 +100,14 @@
                     <a-text text="value: Schau in die Oper;" color="#FFF" font-size="0.2" position="-1 0 0.1"></a-text>
 
                 </a-entity>
-                <a-entity>
-                    <a-sky id="operBild" src="./360GradWienerStaatsoper.jpeg" visible="false"></a-sky>
-                </a-entity>
+
+
+                <!-- Falls es doch besser ist, dass das 360Grad Bild an den Marker getraggt ist
+                
+                <a-entity> 
+                <a-sky id="operBild" src="./360GradWienerStaatsoper.jpeg" visible="false" rotation="0 0 180"></a-sky>
+              </a-entity>-->
+
 
             </a-entity>
             </a-entity>
@@ -118,12 +122,31 @@
 
 
             <!-- Asset-Definitionen (Musterdateien, Modelle, Videos) hier einfügen -->
-        </a-marker-camera>
+        </a-marker>
+
+
+
+      
+      
+        <!--Mit Klick auf den Button "buttonOper" wird das 360 Gradbild aufgerufen. Es liegt außerhalb des a-markers, damit der sky nicht an ihn getrackt ist und man sich unabhängig davon im Raum umsehen kann-->
+        <a-camera>
+            <a-entity id="operBild" visible="false">
+                <a-sky src="./360GradWienerStaatsoper.jpeg"></a-sky>
+            </a-entity>
+        </a-camera>
+
+
+   <!-- Bild (Website), das über den ganzen Bildschirm gelegt wird, wenn man den Button "Jetzt karten bestellen" klickt -->
+ 
+<a-entity id="fullscreenImage" visible="false">
+    <a-plane color="#FFF" width="10" height="10" position="0 0 -5.6"></a-plane>
+    <a-image src="./WebsiteLaptopVersion.jpeg" width="5" height="3.3" position="0 0 -5.5"></a-image>
+  </a-entity>
 
 
 
     </a-scene>
-   
+
 </body><a-entity id="page4" visible="false" position="0 0 -3">
     <!-- Füge hier deine Inhalte für Seite 3 hinzu -->
 
