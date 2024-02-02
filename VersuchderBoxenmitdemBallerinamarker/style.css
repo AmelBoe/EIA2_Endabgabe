@@ -7,3 +7,8 @@
   #websiteButton:hover {
     background-color: #555; /* Ändert die Hintergrundfarbe beim Überfahren mit der Maus */
   }
+
+  #blueplane {
+    border-radius: 15px;
+    color: powderblue;
+  }
