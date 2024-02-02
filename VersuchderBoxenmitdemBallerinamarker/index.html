@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
+   <script defer src="script.js"></script>
+ <link rel="stylesheet" href="style.css">
+ 
+</head>
+
+<body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs='sourceType: webcam;' vr-mode-ui="enabled: false">
+
+
+
+        <a-marker id="marker" type='pattern' url='./pattern_ballerina.patt'>
+            
+            <a-entity id="infoCarousel" rotation="0 0 0"></a-entity>
+
+         
+         
+         
+         
+         
+            <!-- Seite 1 -->
+            <a-entity id="page1" visible="true" position="0 0 0" rotation="90 0 0">
+                <!-- Füge hier deine Inhalte für Seite 1 hinzu -->
+                <a-box color="red" width="2" height="2" depth="0.1"></a-box>
+
+                <!--Button über den man auf die Website kommt-->
+                <a-entity id="websiteButton" geometry="primitive: plane; width: 2; height: 0.5" material="color: #333" position="0 0 -1" rotation="180 0 0">
+                    <a-text value="Jetzt Karten bestellen" text-anchor ="center" color="#FFF" font-size="0.2" position="-1 0 0.1"></a-text>
+                  </a-entity>
+          
+                 
+            </a-entity>
+
+          
+          
+          
+          
+          
+          
+          
+          
+          
+            <!-- Seite 2 -->
+            <a-entity id="page2" visible="false" position="0 0 -3">
+                <!-- Füge hier deine Inhalte für Seite 2 hinzu -->
+                <a-box color="green" width="2" height="2" depth="0.1"></a-box>
+            </a-entity>
+
+            <!-- Seite 3 -->
+            <a-entity id="page3" visible="false" position="0 0 -3">
+                <!-- Füge hier deine Inhalte für Seite 3 hinzu -->
+                <a-box color="blue" width="2" height="2" depth="0.1"></a-box>
+            </a-entity>
+
+
+
+
+            
+           
+           
+           
+           
+            <a-entity id="page4" visible="false" position="0 0 0" rotation="90 0 0">
+                <!-- Füge hier deine Inhalte für Seite 3 hinzu -->
+                <a-plane color="yellow" width="2" height="2" depth="0.1" rotation="180 0 0"></a-plane>
+               
+
+                
+                <a-entity id="buttonOper" geometry="primitive: plane; width: 1; height: 0.5" material="color: #333" position="0 0 -1" rotation="180 0 0">
+                    <a-text  text="value: Schau in die Oper;"  color="#FFF" font-size="0.2" position="-1 0 0.1"></a-text>
+               
+                </a-entity>
+
+
+
+            <!-- Falls es doch besser ist, dass das 360Grad Bild an den Marker getraggt ist
+                
+                <a-entity> 
+                <a-sky id="operBild" src="./360GradWienerStaatsoper.jpeg" visible="false" rotation="0 0 180"></a-sky>
+              </a-entity>-->     
+                
+
+
+            </a-entity>
+            </a-entity>
+
+            <!-- Button zum Wechseln der Seiten im Karusell -->
+            <a-entity id="nextButton" position="0 -1 0" rotation="-90 0 0" scale="0.5 0.5 0.5"
+                text="value: Next; align: center; width: 2; color: white;"></a-entity>
+
+
+        </a-marker>
+        <!--<a-marker id="marker2" type=" pattern" url="./pattern_ballerina.patt">
+         </a-marker> -->
+
+      
+      
+         <!--Mit Klick auf den Button "buttonOper" wird das 360 Gradbild aufgerufen. Es liegt außerhalb des a-markers, damit der sky nicht an ihn getrackt ist und man sich unabhängig davon im Raum umsehen kann-->
+         <a-camera>
+        <a-entity id="operBild" visible="false" >
+            <a-sky src="./360GradWienerStaatsoper.jpeg" ></a-sky>
+        </a-entity>
+       </a-camera>
+         
+
+ <!-- Bild, das über den ganzen Bildschirm gelegt wird -->
+ 
+<a-entity id="fullscreenImage" visible="false">
+    <a-plane color="#FFF" width="10" height="10" position="0 0 -5.6"></a-plane>
+    <a-image src="./WebsiteLaptopVersion.jpeg" width="5" height="3.3" position="0 0 -5.5"></a-image>
+  </a-entity>
+ 
+
+        <a-cursor></a-cursor>
+
+
+
+
+
+        <!-- zweiter Marker mit Info Karusell -->
+        <a-marker-camera id="marker02" type='pattern' url='./pattern_info.patt'>
+            <a-entity id="infoCarousel" rotation="0 0 0"></a-entity>
+
+            <!-- Seite 1 -->
+            <a-entity id="page1" visible="false" position="0 0 -3">
+                <!-- Füge hier deine Inhalte für Seite 1 hinzu -->
+                <a-box color="red" width="2" height="2" depth="0.1"></a-box>
+
+                <!--Button über den man auf die Website kommt-->
+                <a-entity id="orderButton" geometry="primitive: plane; width: 2; height: 0.5" material="color: #333" position="0 1 -3">
+                    <a-text value="Jetzt Karten bestellen" text-anchor ="center" color="#FFF" font-size="0.2"></a-text>
+                  </a-entity>
+          
+                  <!-- Bild, das über den ganzen Bildschirm gelegt wird -->
+                  <a-entity id="fullscreenImage" visible="false">
+                    <a-plane color="#FFF" width="10" height="10"></a-plane>
+                    <a-image src="./WebsiteLaptopVersion.jpeg" width="8" height="8"></a-image>
+                  </a-entity>
+            </a-entity>
+
+            <!-- Seite 2 -->
+            <a-entity id="page2" visible="false" position="0 0 -3">
+                <!-- Füge hier deine Inhalte für Seite 2 hinzu -->
+                <a-box color="green" width="2" height="2" depth="0.1"></a-box>
+            </a-entity>
+
+            <!-- Seite 3 -->
+            <a-entity id="page3" visible="false" position="0 0 -3">
+                <!-- Füge hier deine Inhalte für Seite 3 hinzu -->
+                <a-box color="blue" width="2" height="2" depth="0.1"></a-box>
+            </a-entity>
+            <a-entity id="page4" visible="false" position="0 0 -3">
+                <!-- Füge hier deine Inhalte für Seite 3 hinzu -->
+                <a-box color="yellow" width="2" height="2" depth="0.1"></a-box>
+
+                <a-sky id="operBild" src="./360GradWienerStaatsoper.jpeg" visible="false"></a-sky>
+                <a-entity geometry="primitive: plane; width: 1; height: 0.5" material="color: #333" position="0 1 -3">
+                    <a-text id="button2" text="value: Button;" position="0 0 0.01" color="#FFF"
+                        font-size="0.2"></a-text>
+                </a-entity>
+
+            </a-entity>
+            </a-entity>
+
+            <!-- Button zum Wechseln der Seiten im Karusell -->
+            <a-entity id="nextButton" position="0 -1 0" rotation="-90 0 0" scale="0.5 0.5 0.5"
+                text="value: Next; align: center; width: 2; color: white;"></a-entity>
+
+
+            <!-- Asset-Definitionen (Musterdateien, Modelle, Videos) hier einfügen -->
+        </a-marker-camera>
+
+    </a-scene>
+    <!--<script>
+        document.querySelector('#ballerina').play();
+      </script>-->
+</body><a-entity id="page4" visible="false" position="0 0 -3">
+    <!-- Füge hier deine Inhalte für Seite 3 hinzu -->
+
+
+
+
+
+</html>
