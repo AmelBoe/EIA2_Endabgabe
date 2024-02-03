@@ -1,9 +1,9 @@
 #websiteButton {
-    border-radius: 10px; /* Fügt runde Ecken hinzu */
-    padding: 10px; /* Fügt Innenabstand hinzu */
-    cursor: pointer; /* Ändert den Mauszeiger beim Überfahren des Buttons */
+    border-radius: 10px !important ; /* Fügt runde Ecken hinzu */
+    padding: 10pxb!important; /* Fügt Innenabstand hinzu */
+    cursor: pointer !important; /* Ändert den Mauszeiger beim Überfahren des Buttons */
   }
   
   #websiteButton:hover {
-    background-color: #555; /* Ändert die Hintergrundfarbe beim Überfahren mit der Maus */
+    background-color: #555 !important; /* Ändert die Hintergrundfarbe beim Überfahren mit der Maus */
   }
