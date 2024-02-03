@@ -17,7 +17,7 @@
 
 
 
-        <a-marker id="marker" type='pattern' url='./pattern_ballerina.patt'>
+        <a-marker id="marker" type='pattern' url='./pattern-WPLFo.patt'>
             
             <a-entity id="infoCarousel" rotation="0 0 0"></a-entity>
 
@@ -27,9 +27,17 @@
          
          
             <!-- Seite 1 -->
-            <a-entity id="page1" visible="true" position="0 0 0" rotation="90 0 0">
-                <!-- Füge hier deine Inhalte für Seite 1 hinzu -->
+            <a-entity id="page1" visible="false" position="0 0 0" rotation="90 0 0">
+                <!-- Karusell Seite mit Info Text -->
                 <a-plane id="blueplane" Color="PowderBlue" width="2" height="2" depth="0.1" rotation="180 0 0" ></a-plane>
+
+                <a-entity id="text1" position="0 0 -0.2" rotation="180 0 0" scale="0.4 0.4 0.4"
+                text="value: Schwanensee
+
+                Balett
+                
+                Jetzt im 
+                Freiburger Staatsbalett; align: center; width: 9; color: #000;"></a-entity>
 
                 <!--Button über den man auf die Website kommt-->
                 <a-entity id="websiteButton" geometry="primitive: plane; width: 2; height: 0.5" material="color: #333" position="0 0 -1" rotation="180 0 0">
@@ -49,15 +57,38 @@
           
           
             <!-- Seite 2 -->
-            <a-entity id="page2" visible="false" position="0 0 -3">
-                <!-- Füge hier deine Inhalte für Seite 2 hinzu -->
+            <a-entity id="page2" visible="false" position="0 0 0" rotation="90 0 0">
+               <!-- Karusell Seite mit Info Text -->
                 <a-plane id="blueplane" Color="PowderBlue" width="2" height="2" depth="0.1" rotation="180 0 0" ></a-plane>
+            
+
+            <a-entity id="text2" position="0 0 -0.2" rotation="180 0 0" scale="0.4 0.4 0.4"
+                text="value: Wann?
+                28.02.2024
+                
+                Wo?
+                Schwabentor Strasse 14
+                79117 Freiburg; align: center; width: 9; color: #000;"></a-entity>
+
             </a-entity>
 
+
+
+
+
+
             <!-- Seite 3 -->
-            <a-entity id="page3" visible="false" position="0 0 -3">
-                <!-- Füge hier deine Inhalte für Seite 3 hinzu -->
+            <a-entity id="page3" visible="false" position="0 0 0" rotation="90 0 0">
+               <!-- Karusell Seite mit Info Text -->
                 <a-plane id="blueplane" Color="PowderBlue" width="2" height="2" depth="0.1" rotation="180 0 0" ></a-plane>
+            
+
+            <a-entity id="text2" position="0 0 -0.2" rotation="180 0 0" scale="0.4 0.4 0.4"
+                text="value: Preise
+                
+                Erwachsene: 70€
+                Studenten: 60€; align: center; width: 9; color: #000;"></a-entity>
+
             </a-entity>
 
 
@@ -67,15 +98,16 @@
            
            
            
-           
-            <a-entity id="page4" visible="false" position="0 0 0" rotation="90 0 0">
-                <!-- Füge hier deine Inhalte für Seite 3 hinzu -->
+            <!-- Seite 4 -->
+            <a-entity id="page4" visible="true" position="0 0 0" rotation="90 0 0">
+                <!-- Karusell Seite mit Info Text -->
                 <a-plane id="blueplane" Color="PowderBlue" width="2" height="2" depth="0.1" rotation="180 0 0" ></a-plane>
                
-
+                <a-entity id="text2" position="0 0 -0.2" rotation="180 0 0" scale="0.4 0.4 0.4"
+                text="value: Interesse geweckt?; align: center; width: 9; color: #000;"></a-entity>
                 
                 <a-entity id="buttonOper" geometry="primitive: plane; width: 1; height: 0.5" material="color: #333" position="0 0 -1" rotation="180 0 0">
-                    <a-text  text="value: Schau in die Oper;"  color="#FFF" font-size="0.2" position="-1 0 0.1"></a-text>
+                    <a-text  text="value: Wirf einen Blick in die Oper;"  color="#FFF" font-size="0.2" position="-1 0 0.1" ></a-text>
                
                 </a-entity>
 
@@ -93,8 +125,8 @@
             </a-entity>
 
             <!-- Button zum Wechseln der Seiten im Karusell -->
-            <a-entity id="nextButton" position="0 -1 0" rotation="-90 0 0" scale="0.5 0.5 0.5"
-                text="value: Next; align: center; width: 2; color: white;"></a-entity>
+            <a-entity id="nextButton" geometry="primitive: plane"; position="1 0.1 0" material="color: #000000" rotation="-90 0 0" scale="0.2 0.2 0.2"
+                text="value: Next; align: center; width: 9; color: white;"></a-entity>
 
 
         </a-marker>
