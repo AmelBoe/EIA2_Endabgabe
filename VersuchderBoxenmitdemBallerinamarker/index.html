@@ -7,151 +7,172 @@
     <title>Document</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
-   <script defer src="script.js"></script>
-   <link rel="stylesheet" href="style.css">
- 
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+
+
 </head>
 
 <body style='margin : 0px; overflow: hidden;'>
+
+
     <a-scene embedded arjs='sourceType: webcam;' vr-mode-ui="enabled: false">
 
 
 
-        <a-marker id="marker" type='pattern' url='./pattern-WPLFo.patt'>
-            
+        <a-marker id="marker" type='pattern' url='./pattern_ballerina.patt'>
+
             <a-entity id="infoCarousel" rotation="0 0 0"></a-entity>
 
-         
-         
-         
-         
-         
+
+
+
+
+
             <!-- Seite 1 -->
             <a-entity id="page1" visible="false" position="0 0 0" rotation="90 0 0">
-                <!-- Karusell Seite mit Info Text -->
-                <a-plane id="blueplane" Color="PowderBlue" width="2" height="2" depth="0.1" rotation="180 0 0" ></a-plane>
 
-                <a-entity id="text1" position="0 0 -0.2" rotation="180 0 0" scale="0.4 0.4 0.4"
-                text="value: Schwanensee
+                <a-plane id="blueplane" Color="PowderBlue" width="2" height="2" depth="0.1"
+                    rotation="180 0 0"></a-plane>
 
-                Balett
-                
-                Jetzt im 
-                Freiburger Staatsbalett; align: center; width: 9; color: #000;"></a-entity>
+                <!--Button über den man auf die Website kommt 
+              <a-entity id="websiteButton" geometry="primitive: plane; width: 1.2; height: 0.3" material="color: #333; " position="0 0 -0.1" rotation="180 0 0">
+                <a-text id="textWebsite" value="Jetzt Karten" color="#FFF" anchor="center" position="0 0.1 0.1" wrap-count="10" scale="0.2 0.2 0.2"></a-text>
+                <a-text id="textWebsite" value="bestellen" color="#FFF" anchor="center" position="0.1 -0.07 0.1" wrap-count="10" scale="0.2 0.2 0.2"></a-text>
+                  </a-entity> -->
 
-                <!--Button über den man auf die Website kommt-->
-                <a-entity id="websiteButton" geometry="primitive: plane; width: 2; height: 0.5" material="color: #333" position="0 0 -1" rotation="180 0 0">
-                    <a-text value="Jetzt Karten bestellen" text-anchor ="center" color="#FFF" font-size="0.2" position="-1 0 0.1"></a-text>
-                  </a-entity>
-          
-                 
+                <a-image id="websiteButton" geometry="primitive: plane; width: 1.5; height: 3"
+                    material="src: ./ButtonBild3.png" position="0 0 -0.1" rotation="180 0 0">
+                    <a-text class="textWebsite" value="Jetzt Karten" color="#FFF" anchor="center" position="0 0.1 0.05"
+                        wrap-count="12" scale="0.2 0.2 0.2" font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                    <a-text class="textWebsite" value="bestellen" color="#FFF" anchor="center" position="0.05 -0.07 0.05"
+                        wrap-count="10" scale="0.18 0.18 0.18" font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                </a-image>
+
+
+
+
             </a-entity>
 
-          
-          
-          
-          
-          
-          
-          
-          
-          
+
+
+
+
+
+
+
+
+
             <!-- Seite 2 -->
-            <a-entity id="page2" visible="false" position="0 0 0" rotation="90 0 0">
-               <!-- Karusell Seite mit Info Text -->
-                <a-plane id="blueplane" Color="PowderBlue" width="2" height="2" depth="0.1" rotation="180 0 0" ></a-plane>
-            
+            <a-entity id="page2" visible="false" position="0 0 -3">
 
-            <a-entity id="text2" position="0 0 -0.2" rotation="180 0 0" scale="0.4 0.4 0.4"
-                text="value: Wann?
-                28.02.2024
+                <a-plane id="blueplane" Color="PowderBlue" width="2" height="2" depth="0.1" rotation="-90 0 0"
+                    position="0 0 3 "></a-plane>
+                <a-text id="textWebsite" value="WANN?" color="#FFF" anchor="center" position="-0.3 0.1 2.5"
+                    wrap-count="10" scale="0.2 0.2 0.2" rotation="-90 0 0" font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                <a-text id="textWebsite" value="04.03.2024" color="#FFF" anchor="center" position="0.4 0.1 2.7"
+                    wrap-count="10" scale="0.2 0.2 0.2" rotation="-90 0 0" font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                <a-text id="textWebsite" value="19:30 Uhr" color="#FFF" anchor="center" position="0.4 0.1 2.9"
+                    wrap-count="10" scale="0.2 0.2 0.2" rotation="-90 0 0" font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                <!--<a-link href="https://www.google.com/maps/place/Wiener+Staatsoper"> <a-text id="linkGoogle" value="WO?" color="#FFF" anchor="center" position="-0.3 0.1 3.2" wrap-count="10" scale="0.2 0.2 0.2" rotation="-90 0 0"></a-text></a-link>-->
+                <a-text id="textWoShadow" value="WO?" color="#000" opacity= "0.5" anchor="center" position="-0.3 0.07 3.2" wrap-count="10" scale="0.21 0.21 0.21" rotation="-90 0 0" font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                <a-text id="textWo" value="WO?" color="#FFF" anchor="center" position="-0.3 0.1 3.2"
+                    wrap-count="10" scale="0.2 0.2 0.2" rotation="-90 0 0" font="https://cdn.aframe.io/fonts/Monoid.fnt" ></a-text>
+                   
                 
-                Wo?
-                Schwabentor Strasse 14
-                79117 Freiburg; align: center; width: 9; color: #000;"></a-entity>
+
+
+                <a-text id="textWebsite3" value="Wiener Staatsoper" color="#FFF" anchor="center" position="0.4 0.1 3.4"
+                    wrap-count="10" scale="0.2 0.2 0.2" rotation="-90 0 0" font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
 
             </a-entity>
-
-
-
-
-
 
             <!-- Seite 3 -->
-            <a-entity id="page3" visible="false" position="0 0 0" rotation="90 0 0">
-               <!-- Karusell Seite mit Info Text -->
-                <a-plane id="blueplane" Color="PowderBlue" width="2" height="2" depth="0.1" rotation="180 0 0" ></a-plane>
-            
+            <a-entity id="page3" visible="false" position="0 0 -3">
 
-            <a-entity id="text2" position="0 0 -0.2" rotation="180 0 0" scale="0.4 0.4 0.4"
-                text="value: Preise
-                
-                Erwachsene: 70€
-                Studenten: 60€; align: center; width: 9; color: #000;"></a-entity>
-
+                <a-plane id="blueplane" Color="PowderBlue" width="2" height="2" depth="0.1"
+                    rotation="180 0 0"></a-plane>
             </a-entity>
 
 
 
 
-            
-           
-           
-           
-            <!-- Seite 4 -->
-            <a-entity id="page4" visible="true" position="0 0 0" rotation="90 0 0">
-                <!-- Karusell Seite mit Info Text -->
-                <a-plane id="blueplane" Color="PowderBlue" width="2" height="2" depth="0.1" rotation="180 0 0" ></a-plane>
-               
-                <a-entity id="text2" position="0 0 -0.2" rotation="180 0 0" scale="0.4 0.4 0.4"
-                text="value: Interesse geweckt?; align: center; width: 9; color: #000;"></a-entity>
-                
-                <a-entity id="buttonOper" geometry="primitive: plane; width: 1; height: 0.5" material="color: #333" position="0 0 -1" rotation="180 0 0">
-                    <a-text  text="value: Wirf einen Blick in die Oper;"  color="#FFF" font-size="0.2" position="-1 0 0.1" ></a-text>
-               
+
+
+
+
+<!-- Seite 4 -->
+            <a-entity id="page4" visible="false" position="0 0 0" rotation="90 0 0">
+
+                <a-plane id="blueplane" Color="PowderBlue" width="2" height="2" depth="0.1"
+                    rotation="180 0 0"></a-plane>
+
+
+
+                <a-entity id="buttonOper" geometry="primitive: plane; width: 1; height: 0.5" material="color: #333"
+                    position="0 0 -1" rotation="180 0 0">
+                    <a-text text="value: Schau in die Oper;" color="#FFF" font-size="0.2" position="-1 0 0.1"></a-text>
+
                 </a-entity>
 
 
 
-            <!-- Falls es doch besser ist, dass das 360Grad Bild an den Marker getraggt ist
+                <!-- Falls es doch besser ist, dass das 360Grad Bild an den Marker getraggt ist
                 
                 <a-entity> 
                 <a-sky id="operBild" src="./360GradWienerStaatsoper.jpeg" visible="false" rotation="0 0 180"></a-sky>
-              </a-entity>-->     
-                
+              </a-entity>-->
+
 
 
             </a-entity>
             </a-entity>
+
+
+
+
+
 
             <!-- Button zum Wechseln der Seiten im Karusell -->
-            <a-entity id="nextButton" geometry="primitive: plane"; position="1 0.1 0" material="color: #000000" rotation="-90 0 0" scale="0.2 0.2 0.2"
-                text="value: Next; align: center; width: 9; color: white;"></a-entity>
+            <a-entity id="nextButton" position="0 -1 0" rotation="-90 0 0" scale="0.5 0.5 0.5"
+                text="value: Next; align: center; width: 2; color: white;"></a-entity>
 
 
         </a-marker>
         <!--<a-marker id="marker2" type=" pattern" url="./pattern_ballerina.patt">
          </a-marker> -->
 
-      
-      
-         <!--Mit Klick auf den Button "buttonOper" wird das 360 Gradbild aufgerufen. Es liegt außerhalb des a-markers, damit der sky nicht an ihn getrackt ist und man sich unabhängig davon im Raum umsehen kann-->
-         <a-camera>
-        <a-entity id="operBild" visible="false" >
-            <a-sky src="./360GradWienerStaatsoper.jpeg" ></a-sky>
-        </a-entity>
-       </a-camera>
-         
 
- <!-- Bild, das über den ganzen Bildschirm gelegt wird -->
- 
-<a-entity id="fullscreenImage" visible="false">
-    <a-plane color="#FFF" width="10" height="10" position="0 0 -5.6"></a-plane>
-    <a-image src="./WebsiteLaptopVersion.jpeg" width="5" height="3.3" position="0 0 -5.5"></a-image>
-  </a-entity>
- 
+
+
+
+
+
+        <!--Mit Klick auf den Button "buttonOper" wird das 360 Gradbild aufgerufen. Es liegt außerhalb des a-markers, damit der sky nicht an ihn getrackt ist und man sich unabhängig davon im Raum umsehen kann-->
+        <a-camera>
+            <a-entity id="operBild" visible="false">
+                <a-sky src="./360GradWienerStaatsoper.jpeg"></a-sky>
+            </a-entity>
+        </a-camera>
+
+
+        <!-- Bild, das über den ganzen Bildschirm gelegt wird -->
+
+        <a-entity id="fullscreenImage" visible="false" >
+            <a-plane color="#000" width="10" height="10" position="0 0 -5.6"></a-plane>
+            <a-image src="./WebsiteLaptopVersion.jpeg" width="5" height="3.3" position="0 0 -5.5"></a-image>
+        </a-entity>
+
 
         <a-cursor></a-cursor>
+
+
+
+
+
+
+
+
 
 
 
@@ -167,15 +188,16 @@
                 <a-box color="red" width="2" height="2" depth="0.1"></a-box>
 
                 <!--Button über den man auf die Website kommt-->
-                <a-entity id="orderButton" geometry="primitive: plane; width: 2; height: 0.5" material="color: #333" position="0 1 -3">
-                    <a-text value="Jetzt Karten bestellen" text-anchor ="center" color="#FFF" font-size="0.2"></a-text>
-                  </a-entity>
-          
-                  <!-- Bild, das über den ganzen Bildschirm gelegt wird -->
-                  <a-entity id="fullscreenImage" visible="false">
+                <a-entity id="orderButton" geometry="primitive: plane; width: 2; height: 0.5" material="color: #333"
+                    position="0 1 -3">
+                    <a-text value="Jetzt Karten bestellen" text-anchor="center" color="#FFF" font-size="0.2"></a-text>
+                </a-entity>
+
+                <!-- Bild, das über den ganzen Bildschirm gelegt wird -->
+                <a-entity id="fullscreenImage" visible="false">
                     <a-plane color="#FFF" width="10" height="10"></a-plane>
                     <a-image src="./WebsiteLaptopVersion.jpeg" width="8" height="8"></a-image>
-                  </a-entity>
+                </a-entity>
             </a-entity>
 
             <!-- Seite 2 -->
@@ -214,9 +236,7 @@
     <!--<script>
         document.querySelector('#ballerina').play();
       </script>-->
-</body><a-entity id="page4" visible="false" position="0 0 -3">
-    <!-- Füge hier deine Inhalte für Seite 3 hinzu -->
-
+</body>
 
 
 
