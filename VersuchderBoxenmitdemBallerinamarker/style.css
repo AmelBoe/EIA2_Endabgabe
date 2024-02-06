@@ -7,3 +7,14 @@
   #websiteButton:hover {
     background-color: #555 !important; /* Ändert die Hintergrundfarbe beim Überfahren mit der Maus */
   }
+
+
+
+    @font-face {
+      font-family: 'PlayfairDisplay';
+      src: url('./PlayfairDisplay-VariableFont_wght.woff') ;
+  }
+  
+  #textWo{
+    font-family: "PlayfairDisplay" !important; 
+  }
