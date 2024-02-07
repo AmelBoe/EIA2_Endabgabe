@@ -11,6 +11,8 @@
     console.log("hallo Welt")
     document.getElementById("fullscreenImage").object3D.visible = true;
     document.querySelector('#page1').setAttribute('visible', false);
+    document.querySelector('#nextButton').setAttribute('visible', false);
+    document.querySelector('#nextButton2').setAttribute('visible', false);
 }
 )
 
@@ -41,16 +43,16 @@ document.querySelector("#textWo").addEventListener("mouseleave",function(){
 
 //wenn man über den Button "Jetzt Karten bestellen" hovert, dann kommt er leicht entgegen
 let websiteButton = document.querySelector('#websiteButton');
-let textWebsite = document.querySelector('.textWebsite');
+
 
 websiteButton.addEventListener('mouseenter', function() {
-    websiteButton.setAttribute('position', '0 0 -0.15');
-    textWebsite.setAttribute('position', '0 0.2 0.05');
+    websiteButton.setAttribute('position', '0 0.5 -0.3');
+ 
 });
 
 websiteButton.addEventListener('mouseleave', function() {
-    websiteButton.setAttribute('position', '0 0 -0.1');
-    textWebsite.setAttribute('position', '0 0.1 0.05');
+    websiteButton.setAttribute('position', '0 0.5 -0.1');
+
 });
 
 
