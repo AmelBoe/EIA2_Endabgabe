@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
+    <script defer src="script.js"></script>
+
+
+</head>
+
+<body style='margin : 0px; overflow: hidden;'>
+
+    <a-scene embedded arjs='sourceType: webcam;' vr-mode-ui="enabled: false">
+
+        <!--Marker Ballerina: beim Scannen, wird die tanzende Ballerina (mit Musik) aufgerufen-->
+        <a-marker id="marker" type='pattern' url='./Marker/pattern_ballerina.patt'>
+
+            <a-entity id="sound" sound="src: url(MusikBallerina.mp3)" visible="false"></a-entity>
+
+        </a-marker>
+
+
+
+
+
+
+        <!--Marker Info: beim Scannen wird das Infokarussell aufgerufen-->
+        <a-marker id="marker02" type='pattern' url='./Marker/pattern-WPLFo.patt'>
+
+            <a-entity id="Infokarussell" rotation="0 0 0"></a-entity>
+
+
+            <!-- Seite 1 (Button zur Website)-->
+            <a-entity id="page1" visible="true" position="0 0 0" rotation="90 0 0">
+
+                <a-plane id="blueplane" Color="PowderBlue" width="2" height="2" depth="0.1"
+                    rotation="180 0 0"></a-plane>
+
+                <!--Text-->
+                <a-text id="text1" position="0 -0.3 -0.2" rotation="180 0 0" scale="0.3 0.3 0.3" text="value: Schwanensee
+                    
+                    Freiburger Staatsballett
+                    
+                    Jetzt in der
+                    Wiener Staatsoper; align: center; width: 9; color: #000;"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+
+                <!--Button "Jetzt Karten bestellen"-->
+                <a-image id="websiteButton" geometry="primitive: plane; width: 1.5; height: 3"
+                    material="src: ./ButtonBild3.png" position="0 0.5 -0.1" rotation="180 0 0">
+                    <a-text class="textWebsite" value="Jetzt Karten" color="#FFF" anchor="center" position="0 0.1 0.05"
+                        wrap-count="12" scale="0.2 0.2 0.2" font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                    <a-text class="textWebsite" value="bestellen" color="#FFF" anchor="center"
+                        position="0.05 -0.07 0.05" wrap-count="10" scale="0.18 0.18 0.18"
+                        font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                </a-image>
+            </a-entity>
+
+
+
+
+
+
+            <!-- Seite 2 (Wann und Wo)-->
+            <a-entity id="page2" visible="false" position="0 0 -3">
+
+                <a-plane id="blueplane" Color="PowderBlue" width="2" height="2" depth="0.1" rotation="-90 0 0"
+                    position="0 0 3 "></a-plane>
+
+                <!--Text-->
+                <a-text id="textWebsite" value="WANN?" color="#000" anchor="center" position="-0.3 0.1 2.5"
+                    wrap-count="10" scale="0.2 0.2 0.2" rotation="-90 0 0"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                <a-text id="textWebsite" value="04.03.2024" color="#000" anchor="center" position="0.4 0.1 2.7"
+                    wrap-count="10" scale="0.2 0.2 0.2" rotation="-90 0 0"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                <a-text id="textWebsite" value="19:30 Uhr" color="#000" anchor="center" position="0.4 0.1 2.9"
+                    wrap-count="10" scale="0.2 0.2 0.2" rotation="-90 0 0"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                <a-text id="textWoShadow" value="WO?" color="#000" opacity="0.5" anchor="center"
+                    position="-0.3 0.07 3.2" wrap-count="10" scale="0.21 0.21 0.21" rotation="-90 0 0"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                <a-text id="textWo" value="WO?" color="blue" underline="true" anchor="center" position="-0.3 0.1 3.2"
+                    wrap-count="10" scale="0.2 0.2 0.2" rotation="-90 0 0"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                <a-text id="textWebsite3" value="Wiener Staatsoper" color="#000" anchor="center" position="0.4 0.1 3.4"
+                    wrap-count="10" scale="0.2 0.2 0.2" rotation="-90 0 0"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+
+            </a-entity>
+
+
+
+
+
+            <!-- Seite 3 (Preisübersicht)-->
+            <a-entity id="page3" visible="false" position="0 0 0" rotation="90 0 0">
+
+                <a-plane id="blueplane" Color="PowderBlue" width="2" height="2" depth="0.1"
+                    rotation="180 0 0"></a-plane>
+                <a-text id="text2" position="-0.3 -0.7 -0.2" rotation="180 0 0" scale="0.8 0.8 0.8"
+                    text="value: PREISE; align: left; widht: 9; color: #000"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                <a-text id="text2" position="-0.2 -0.4 -0.2" rotation="180 0 0" scale="0.6 0.6 0.6"
+                    text="value: Standart Tickets; align: center; widht: 9; color: #000"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                <a-text id="text2" position="-0.2 -0.2 -0.2" rotation="180 0 0" scale="0.4 0.4 0.4"
+                    text="value: Erwachsene 30 EUR; align: center; widht: 9; color: #000"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                <a-text id="text2" position="0.02 0 -0.2" rotation="180 0 0" scale="0.4 0.4 0.4"
+                    text="value: Kinder bis 12 Jahre 15 EUR; align: center; widht: 9; color: #000"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                <a-text id="text2" position="-0.4 0.2 -0.2" rotation="180 0 0" scale="0.6 0.6 0.6"
+                    text="value: VIP Tickets; align: center; widht: 9; color: #000"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                <a-text id="text2" position="0.02 0.4 -0.2" rotation="180 0 0" scale="0.4 0.4 0.4"
+                    text="value: Inklusive Backstage Zugang; align: center; widht: 9; color: #000"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+                <a-text id="text2" position="-0.2 0.6 -0.2" rotation="180 0 0" scale="0.4 0.4 0.4"
+                    text="value: 60 EUR pro Person; align: center; widht: 9; color: #000"
+                    font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+            </a-entity>
+
+
+
+
+
+
+
+            <!-- Seite 4 (Button 360-Gradbild Oper)-->
+            <a-entity id="page4" visible="false" position="0 0 0" rotation="90 0 0">
+
+                <a-plane id="blueplane" Color="PowderBlue" width="2" height="2" depth="0.1"
+                    rotation="180 0 0"></a-plane>
+
+                <!--Bild Sitzplan-->
+                <a-image id="sitzplan" material="src: ./BildSitzplan/Sitzplan.png" position="0 0 -0.03"
+                    scale="1.7 1.7 1.7"></a-image>
+
+                <!--Button zum 360-Gradbild-->
+                <a-image id="buttonOper" geometry="primitive: plane; width: 1.5; height: 3.1"
+                    material="src: ./ButtonBild3.png" position="0 0 -0.1" rotation="180 0 0">
+                    <a-text text="value: Wirf einen Blick in die Oper; align: center;" color="#FFF" wrap-count="10"
+                        scale="0.13 0.13 0.13" position="0 0.02 0.05"
+                        font="https://cdn.aframe.io/fonts/Monoid.fnt"></a-text>
+
+                </a-image>
+
+            </a-entity>
+            </a-entity>
+
+
+
+
+
+
+            <!-- Button zum Wechseln der Seiten im Karusell -->
+
+            <a-image id="nextButton" geometry="primitive: plane" ; position="1.09 0.14 0"
+                material="src: ./WeiterButton.png" rotation="-90 0 0" scale="0.5 0.5 0.5"></a-image>
+            <a-entity id="nextButton2" geometry="primitive: plane" ; position="1.1 0.1 0" rotation="-90 0 0"
+                scale="0.15 0.5 0.5" material="color: grey">
+            </a-entity>
+            </a-image>
+
+            <!--Zurückbutton-->
+            <a-image id="backButton" geometry="primitive: plane" ; position="-1.09 0.14 0"
+                material="src: ./WeiterButton.png" rotation="-90 180 0" scale="0.5 0.5 0.5"></a-image>
+            <a-entity id="backButton2" geometry="primitive: plane" ; position="-1.1 0.1 0" rotation="-90 0 0"
+                scale="0.15 0.5 0.5" material="color: grey">
+            </a-entity>
+            </a-image>
+
+        </a-marker>
+
+
+
+        <!--Mit Klick auf den Button "buttonOper" wird das 360 Gradbild aufgerufen. Es liegt außerhalb des a-markers, damit der sky nicht an ihn getrackt ist und man sich unabhängig davon im Raum umsehen kann-->
+        <a-camera>
+            <a-entity id="operBild" visible="false">
+                <a-sky src="./360Gradbild/360GradWienerStaatsoper.jpeg"></a-sky>
+            </a-entity>
+        </a-camera>
+
+
+        <!-- Bild der Website, welches über den ganzen Bildschirm gelegt wird -->
+
+        <a-entity id="fullscreenImage" visible="false">
+            <a-plane color="#000" width="10" height="10" position="0 0 -5.6"></a-plane>
+            <a-image src="./BildWebsite/WebsiteLaptopVersion.jpeg" width="5" height="3.3" position="0 0 -5.5"></a-image>
+        </a-entity>
+
+        <!--Cursor-->
+        <a-cursor></a-cursor>
+
+
+        <!-- Seltsamerweise funktioniert die ganze Szene nur, wenn hier noch eine a-marker-camera drinnen ist -->
+        <a-marker-camera>
+        </a-marker-camera>
+
+    </a-scene>
+
+</body>
+
+</html>
